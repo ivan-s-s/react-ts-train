@@ -18,6 +18,28 @@ export const MenuPanel: FC = () => {
               ? "MenuPanel-ListItem MenuPanel-ListItem__active"
               : "MenuPanel-ListItem"
           }
+          to={ROUTES.ACCORDION}
+        >
+          Accordion
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
+          to={ROUTES.AUTOCOMPLETE}
+        >
+          Autocomplete
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
           to={ROUTES.BUTTON}
         >
           Button
@@ -32,6 +54,17 @@ export const MenuPanel: FC = () => {
           to={ROUTES.ICON}
         >
           Icon
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
+          to={ROUTES.SELECT}
+        >
+          Select
         </NavLink>
       </div>
     </nav>

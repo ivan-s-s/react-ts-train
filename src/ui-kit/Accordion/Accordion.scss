@@ -1,0 +1,83 @@
+@import "ui-kit/styles";
+
+.Accordion {
+  $this: &;
+  margin-bottom: 18px;
+  box-shadow: none;
+
+  &-Header {
+    @include roboto-14-bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px 7px 0;
+    height: 32px;
+    color: $color-text;
+    background-color: white;
+    border-bottom: 1px solid $color-suit-gray;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $shadow-bottom;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // &Title {}
+
+    &Icon {
+      svg {
+        width: 16px;
+        height: 10px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  &-ContentWrapper {
+    &-enter {
+      opacity: 0;
+      overflow: hidden;
+      max-height: 0;
+    }
+
+    &-enter-active {
+      opacity: 1;
+      max-height: var(--content-height);
+      transition: opacity 0.3s, max-height 0.3s cubic-bezier(0, 1, 0, 1); 
+    }
+
+    &-exit {
+      opacity: 1;
+      max-height: var(--content-height);
+    }
+
+    &-exit-active {
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.3s, max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    }
+  }
+
+  &-Content {
+    padding: 15px 0;
+    color: $color-text;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  &#{$this}__active {
+    #{$this}-HeaderIcon {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

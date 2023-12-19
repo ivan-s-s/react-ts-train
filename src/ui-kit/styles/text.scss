@@ -1,0 +1,9 @@
+$base-font-family: "Roboto", sans-serif;
+
+@mixin roboto-14-bold {
+  font-family: $base-font-family;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}

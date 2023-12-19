@@ -1,5 +1,9 @@
 export const ROUTES = {
-  HOME: "/",
-  BUTTON: "button",
+  ACCORDION: "/accordion/",
+  AUTOCOMPLETE: "/autocomplete/",
+  BUTTON: "/button/",
   ICON: "/icon/",
+  HOME: "/",
+  SELECT: "/select/",
 };
+
