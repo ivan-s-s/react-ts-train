@@ -2,6 +2,7 @@ export * from "./Autocomplete";
 export * from "./Accordion";
 export * from "./Button";
 export * from "./Icon";
+export * from "./Modal";
 export * from "./Select";
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports

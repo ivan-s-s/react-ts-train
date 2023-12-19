@@ -1,13 +1,28 @@
 import type { FC } from "react";
+import { useEffect, useState } from "react";
 import { Layout } from "components";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "routes";
 import { AccordionPage, AutocompletePage, ButtonPage, HomePage, IconPage, SelectPage } from "pages";
+import { SocketProvider } from "services/context";
+import { DefaultEventsMap } from "socket.io/dist/typed-events";
+import { Socket, connect } from "socket.io-client";
 
 export const App: FC = () => {
+  const [socket, setSocket] = useState<Socket<DefaultEventsMap, DefaultEventsMap> | undefined>();
+
+  useEffect(() => {
+    const connection = connect("http://localhost:3001");
+    setSocket(connection);
+    return () => {
+      connection.close();
+    }
+  }, []);
+
   return (
-    <div className="App">
+    <SocketProvider value={socket}>
+      <div className="App">
       <Layout>
         <Routes>
         <Route path={ROUTES.ACCORDION} element={<AccordionPage />} />
@@ -19,5 +34,6 @@ export const App: FC = () => {
         </Routes>
       </Layout>
     </div>
+    </SocketProvider>
   );
 };
