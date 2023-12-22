@@ -5,6 +5,8 @@ export * from "./Checkbox";
 export * from "./CheckboxGroup";
 export * from "./Icon";
 export * from "./Modal";
+export * from "./Ripple";
+export * from "./Scrollbar";
 export * from "./Select";
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports

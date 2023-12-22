@@ -5,7 +5,9 @@ import IconPage from "./IconPage";
 
 export { AccordionPage, ButtonPage, HomePage, IconPage };
 
-export * from "./CheckboxPage";
-export * from "./SelectPage";
 export * from "./AutocompletePage";
+export * from "./CheckboxPage";
 export * from "./ModalPage";
+export * from "./RipplePage";
+export * from "./ScrollbarPage";
+export * from "./SelectPage";
