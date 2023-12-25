@@ -73,6 +73,17 @@ export const MenuPanel: FC = () => {
               ? "MenuPanel-ListItem MenuPanel-ListItem__active"
               : "MenuPanel-ListItem"
           }
+          to={ROUTES.ICON_BUTTON}
+        >
+          Icon Button
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
           to={ROUTES.MODAL}
         >
           Modal

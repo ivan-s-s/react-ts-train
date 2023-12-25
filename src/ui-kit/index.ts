@@ -3,6 +3,7 @@ export * from "./Accordion";
 export * from "./Button";
 export * from "./Checkbox";
 export * from "./CheckboxGroup";
+export * from "./DocumentViewer";
 export * from "./Icon";
 export * from "./Modal";
 export * from "./Ripple";

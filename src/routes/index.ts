@@ -4,6 +4,7 @@ export const ROUTES = {
   BUTTON: "/button/",
   CHECKBOX: "/checkbox/",
   ICON: "/icon/",
+  ICON_BUTTON: "/icon-button/",
   HOME: "/",
   MODAL: "/modal/",
   RIPPLE: "/ripple/",
