@@ -73,6 +73,17 @@ export const MenuPanel: FC = () => {
               ? "MenuPanel-ListItem MenuPanel-ListItem__active"
               : "MenuPanel-ListItem"
           }
+          to={ROUTES.HAMBURGER}
+        >
+          Hamburger
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
           to={ROUTES.ICON}
         >
           Icon
@@ -98,6 +109,17 @@ export const MenuPanel: FC = () => {
           to={ROUTES.MODAL}
         >
           Modal
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
+          to={ROUTES.OVERLAY}
+        >
+          Overlay
         </NavLink>
 
         <NavLink

@@ -4,7 +4,7 @@ import { Layout } from "components";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "routes";
-import { AccordionPage, AutocompletePage, ButtonPage, CheckboxPage, DocumentViewerPage, HomePage, IconPage, IconButtonPage, ModalPage, RipplePage, ScrollbarPage, SelectPage } from "pages";
+import { AccordionPage, AutocompletePage, ButtonPage, CheckboxPage, DocumentViewerPage, HomePage, IconPage, IconButtonPage, ModalPage, RipplePage, ScrollbarPage, SelectPage, OverlayPage, HamburgerPage } from "pages";
 import { SocketProvider } from "services/context";
 import { DefaultEventsMap } from "socket.io/dist/typed-events";
 import { Socket, connect } from "socket.io-client";
@@ -31,9 +31,11 @@ export const App: FC = () => {
           <Route path={ROUTES.CHECKBOX} element={<CheckboxPage />} />
           <Route path={ROUTES.DOCUMENT_VIEWER} element={<DocumentViewerPage />} />
           <Route path={ROUTES.HOME} element={<HomePage />} />
+          <Route path={ROUTES.HAMBURGER} element={<HamburgerPage />} />
           <Route path={ROUTES.ICON} element={<IconPage />} />
           <Route path={ROUTES.ICON_BUTTON} element={<IconButtonPage />} />
           <Route path={ROUTES.MODAL} element={<ModalPage />} />
+          <Route path={ROUTES.OVERLAY} element={<OverlayPage />} />
           <Route path={ROUTES.RIPPLE} element={<RipplePage />} />
           <Route path={ROUTES.SCROLLBAR} element={<ScrollbarPage />} />
           <Route path={ROUTES.SELECT} element={<SelectPage />} />
