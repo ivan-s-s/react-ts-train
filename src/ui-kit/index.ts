@@ -1,5 +1,6 @@
-export * from "./Autocomplete";
 export * from "./Accordion";
+export * from "./Autocomplete";
+export * from "./Avatar";
 export * from "./Button";
 export * from "./Checkbox";
 export * from "./CheckboxGroup";

@@ -1,6 +1,7 @@
 export const ROUTES = {
   ACCORDION: "/accordion/",
   AUTOCOMPLETE: "/autocomplete/",
+  AVATAR: "/avatar/",
   BUTTON: "/button/",
   CHECKBOX: "/checkbox/",
   DOCUMENT_VIEWER: "/document-viewer/",

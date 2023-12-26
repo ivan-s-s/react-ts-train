@@ -6,6 +6,7 @@ import IconPage from "./IconPage";
 export { AccordionPage, ButtonPage, HomePage, IconPage };
 
 export * from "./AutocompletePage";
+export * from "./AvatarPage";
 export * from "./CheckboxPage";
 export * from "./DocumentViewerPage";
 export * from "./HamburgerPage"
