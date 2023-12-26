@@ -62,6 +62,17 @@ export const MenuPanel: FC = () => {
               ? "MenuPanel-ListItem MenuPanel-ListItem__active"
               : "MenuPanel-ListItem"
           }
+          to={ROUTES.DOCUMENT_VIEWER}
+        >
+          DocumentViewer
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
           to={ROUTES.ICON}
         >
           Icon

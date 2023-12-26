@@ -1,22 +1,32 @@
 import { useState, useEffect, useCallback } from "react";
 import type { MultiValue, SingleValue, OnChangeValue } from "react-select";
-import { getPostsApi, type TPosts } from "services/api/posts";
-import type { TSelectOption, TSelectMultiType, TAsyncSelectLoadOptions, TAsyncSelectLoadOptionsCallback } from "ui-kit";
+import type { TPosts } from "services/api/posts";
+import { getPostsApi } from "services/api/posts";
+import type {
+  TSelectOption,
+  TSelectMultiType,
+  TAsyncSelectLoadOptions,
+  TAsyncSelectLoadOptionsCallback
+} from "ui-kit";
 import { DEBOUNCE_TIMEOUT } from "ui-kit";
 import isNil from "lodash/isNil";
 import debounce from "lodash/debounce";
 
 export const usePosts = () => {
-  const [isLoading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isSelectOpened, setIsSelectOpened] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [posts, setPosts] = useState<TPosts>([]);
 
-  const [selectedOption, setSelectedOption] = useState<SingleValue<TSelectOption | MultiValue<TSelectOption>>>({
+  const [selectedOption, setSelectedOption] = useState<
+    SingleValue<TSelectOption> | MultiValue<TSelectOption>
+  >({
     value: "",
     label: "",
   });
-  const [multipleSelectedOption, setMultipleSelectedOption] = useState<SingleValue<TSelectOption | MultiValue<TSelectOption>>>({
+  const [multipleSelectedOption, setMultipleSelectedOption] = useState<
+    SingleValue<TSelectOption> | MultiValue<TSelectOption>
+  >({
     value: "",
     label: "",
   });
@@ -29,7 +39,7 @@ export const usePosts = () => {
       const selectedOptionSingle = selectedOption as TSelectOption;
       setSelectedOption(selectedOptionSingle);
     }
-    setIsSubmitting(prevState => !prevState);
+    setIsSubmitting((prevState) => !prevState);
   };
 
   const handleBlur = () => {
@@ -45,35 +55,37 @@ export const usePosts = () => {
     setIsSubmitting(prevState => !prevState);
   }, [isSubmitting, setIsSubmitting]);
 
-  const fetchPosts = async({
-    inputValue, callback
+  const fetchPosts = async ({
+    inputValue,
+    callback,
   }: {
     inputValue: string;
-    callback: TAsyncSelectLoadOptionsCallback
+    callback: TAsyncSelectLoadOptionsCallback;
   }) => {
-    setIsloading(true);
+    setIsLoading(true);
     try {
       const params = { userId: inputValue };
       const response = await getPostsApi(params);
       setPosts(posts);
-      callback(response.map((item) => ({label: item.title, value: String(item.id)})));
+      callback(response.map((item) => ({ label: item.title, value: String(item.id) })));
     } catch (error) {
       console.error(error);
     } finally {
-      setIsloading(false);
+      setIsLoading(false);
     }
-  }
+  };
 
+  // eslint-disable-next-line
   const debouncedFetcher = useCallback(
     debounce(({ inputValue, callback }) => {
-      void fetchPosts({inputValue, callback});
-    }, /* DEBOUNCE_TIMEOUT */2000),
+      void fetchPosts({ inputValue, callback });
+    }, DEBOUNCE_TIMEOUT),
     [],
   );
 
   const handleLoadOptions: TAsyncSelectLoadOptions = (inputValue, callback) => {
     debouncedFetcher({ inputValue, callback });
-  }
+  };
 
   return {
     isLoading,

@@ -7,6 +7,7 @@ export { AccordionPage, ButtonPage, HomePage, IconPage };
 
 export * from "./AutocompletePage";
 export * from "./CheckboxPage";
+export * from "./DocumentViewerPage";
 export * from "./IconButtonPage";
 export * from "./ModalPage";
 export * from "./RipplePage";

@@ -3,6 +3,7 @@ export const ROUTES = {
   AUTOCOMPLETE: "/autocomplete/",
   BUTTON: "/button/",
   CHECKBOX: "/checkbox/",
+  DOCUMENT_VIEWER: "/document-viewer/",
   ICON: "/icon/",
   ICON_BUTTON: "/icon-button/",
   HOME: "/",
