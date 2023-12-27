@@ -4,7 +4,7 @@ import { Layout } from "components";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "routes";
-import { AccordionPage, AutocompletePage, ButtonPage, CheckboxPage, DocumentViewerPage, HomePage, IconPage, IconButtonPage, ModalPage, RipplePage, ScrollbarPage, SelectPage, OverlayPage, HamburgerPage, AvatarPage } from "pages";
+import { AccordionPage, AutocompletePage, ButtonPage, CheckboxPage, DocumentViewerPage, HomePage, IconPage, IconButtonPage, ModalPage, RipplePage, ScrollbarPage, SelectPage, OverlayPage, HamburgerPage, AvatarPage, SidebarPage } from "pages";
 import { SocketProvider } from "services/context";
 import { DefaultEventsMap } from "socket.io/dist/typed-events";
 import { Socket, connect } from "socket.io-client";
@@ -40,6 +40,7 @@ export const App: FC = () => {
           <Route path={ROUTES.RIPPLE} element={<RipplePage />} />
           <Route path={ROUTES.SCROLLBAR} element={<ScrollbarPage />} />
           <Route path={ROUTES.SELECT} element={<SelectPage />} />
+          <Route path={ROUTES.SIDEBAR} element={<SidebarPage />} />
         </Routes>
       </Layout>
     </div>

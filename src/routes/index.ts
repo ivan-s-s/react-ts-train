@@ -14,5 +14,6 @@ export const ROUTES = {
   RIPPLE: "/ripple/",
   SCROLLBAR: "/scrollbar/",
   SELECT: "/select/",
+  SIDEBAR: "/sidebar/",
 };
 
