@@ -1,3 +1,4 @@
+export * from "./ArrowDownIcon";
 export * from "./CenterIcon";
 export * from "./CheckboxIcon";
 export * from "./CloseIcon";
@@ -5,3 +6,5 @@ export * from "./MinusIcon";
 export * from "./PlusIcon";
 export * from "./RippleIcon";
 export * from "./TelegramIcon";
+export * from "./VisibilityIcon";
+export * from "./VisibilityOffIcon";

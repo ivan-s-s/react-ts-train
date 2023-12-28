@@ -36,6 +36,18 @@
     transition: all 0.3s;
   }
 
+  &-Visibility {
+    display: inline-block;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-55%);
+    right: 12px;
+
+    svg {
+      fill: rgba(0, 0, 0, 0.54);
+    }
+  }
+
   &__active {
     width: 100%;
     background-color: white;
@@ -58,6 +70,13 @@
       input {
         background-color: white;
       }
+    }
+
+    input:-webkit-autofill.Input__active,
+    input:-webkit-autofill.Input__active:hover,
+    input:-webkit-autofill.Input__active:focus,
+    input:-webkit-autofill.Input__active:active {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
     }
 
     .Input__active.Input__error {

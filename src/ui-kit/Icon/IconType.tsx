@@ -1,14 +1,16 @@
 import { newGuid } from "utils/guid";
 import {
-  CloseIcon,
+  ArrowDownIcon,
+  CenterIcon,
   CheckboxIcon,
+  CloseIcon,
+  MinusIcon,
+  PlusIcon,
   RippleIcon,
   TelegramIcon,
-  PlusIcon,
-  MinusIcon,
-  CenterIcon
+  VisibilityIcon,
+  VisibilityOffIcon,
 } from "ui-kit/assets";
-import { ReactComponent as ArrowDown } from "ui-kit/assets/icons/ArrowDown.svg";
 import { ReactComponent as Pdf } from "ui-kit/assets/icons/files/Pdf.svg";
 
 export type IconType =
@@ -20,10 +22,12 @@ export type IconType =
   | "Pdf"
   | "Plus"
   | "Ripple"
-  | "Telegram";
+  | "Telegram"
+  | "Visibility"
+  | "VisibilityOff";
 
 export const IconTypes = new Map([
-  ["ArrowDown", <ArrowDown key={newGuid()} />],
+  ["ArrowDown", <ArrowDownIcon key={newGuid()} />],
   ["Center", <CenterIcon key={newGuid()} />],
   ["Checkbox", <CheckboxIcon key={newGuid()} />],
   ["Close", <CloseIcon key={newGuid()} />],
@@ -32,4 +36,6 @@ export const IconTypes = new Map([
   ["Plus", <PlusIcon key={newGuid()} />],
   ["Ripple", <RippleIcon key={newGuid()} />],
   ["Telegram", <TelegramIcon key={newGuid()} />],
+  ["Visibility", <VisibilityIcon key={newGuid()} />],
+  ["VisibilityOff", <VisibilityOffIcon key={newGuid()} />],
 ]);
