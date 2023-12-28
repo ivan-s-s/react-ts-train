@@ -84,6 +84,17 @@ export const MenuPanel: FC = () => {
               ? "MenuPanel-ListItem MenuPanel-ListItem__active"
               : "MenuPanel-ListItem"
           }
+          to={ROUTES.FORM_FIELD}
+        >
+          FormField
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
           to={ROUTES.HAMBURGER}
         >
           Hamburger

@@ -5,6 +5,7 @@ export const ROUTES = {
   BUTTON: "/button/",
   CHECKBOX: "/checkbox/",
   DOCUMENT_VIEWER: "/document-viewer/",
+  FORM_FIELD: "/form-field/",
   HOME: "/",
   HAMBURGER: "/hamburger/",
   ICON: "/icon/",

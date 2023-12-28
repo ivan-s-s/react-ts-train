@@ -1,5 +1,7 @@
 $color-primary: rgba(176, 151, 106, 1); /* #80976A */
 $color-primary-hover: rgba(153, 126, 77, 1); /* #997E4D */
+$color-primary-light: rgba(239, 234, 225, 1); /* #efeae1 */
+$color-primary-light-hover: rgba(223, 213, 195, 1); /* #dfd5c3 */
 
 $color-disabled: rgba(191, 191, 191, 1); /* #BFBFBF */
 $color-disabled-secondary: rgba(245, 245, 245, 1); /* #F5F5F5 */
@@ -21,3 +23,12 @@ $color-black: rgba(0, 0, 0, 1); /* #000 */
 /* Violet */
 $color-light-violet: rgba(126, 87, 194, 1); /* #7E57C2 */
 $color-dark-violet: rgba(101, 45, 187, 1); /* #652DBB */
+
+/* Red */
+$color-red: rgba(227, 18, 53, 1); /* #e31235 */
+$color-light-red: rgba(251, 228, 227, 1); /* #fbe4e3 */
+$color-light-red-hover: rgba(250, 219, 218, 1); /* #fadbda */
+
+/* Other */
+$color-bg-input: rgba(236, 241, 247, 1); /* #ecf1f7 */
+$color-bg-input-hover: rgba(228, 235, 243, 1); /* #e4ebf3 */

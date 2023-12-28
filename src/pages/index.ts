@@ -9,6 +9,7 @@ export * from "./AutocompletePage";
 export * from "./AvatarPage";
 export * from "./CheckboxPage";
 export * from "./DocumentViewerPage";
+export * from "./FormFieldPage";
 export * from "./HamburgerPage"
 export * from "./IconButtonPage";
 export * from "./ModalPage";

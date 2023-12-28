@@ -1,0 +1,27 @@
+@import "ui-kit/styles";
+
+.Input {
+  $this: &;
+  display: flex;
+  align-items: center;
+  padding: 18px 40px 18px 12px;
+  width: 100%;
+  background-color: $color-primary-light;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: transparent;
+
+  &:hover {
+    background-color: $color-primary-light-hover;
+    transition: background-color 0.25s ease;
+  }
+
+  &#{$this}__error {
+    background-color: $color-light-red;
+
+    &:hover {
+      background-color: $color-light-red-hover;
+      transition: background-color 0.25s ease;
+    }
+  }
+}
