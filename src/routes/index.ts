@@ -16,5 +16,6 @@ export const ROUTES = {
   SCROLLBAR: "/scrollbar/",
   SELECT: "/select/",
   SIDEBAR: "/sidebar/",
+  TEXTAREA: "/textarea/",
 };
 

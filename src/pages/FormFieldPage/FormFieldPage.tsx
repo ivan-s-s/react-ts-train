@@ -3,15 +3,18 @@ import type { FC, FocusEvent } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup.umd";
 import * as yup from "yup";
+import { fetchUserSignup } from "api/account";
 import { Button, FormField } from "ui-kit";
 import "./FormFieldPage.scss";
+import { normalizePhoneNumber } from "utils/normalizePhoneNumber";
 
-type TSignupForm = {
+export interface TSignupForm {
   firstName: string;
   lastName: string;
   email?: string;
   password: string;
   passwordConfirm: string;
+  phoneNumber: string;
 };
 
 const schema = yup
@@ -36,6 +39,9 @@ const schema = yup
       .string()
       .required("Write your confirm password")
       .min(8, "Must be at 8 characters"),
+    phoneNumber: yup
+      .string()
+      .required("Write your phone number"),
   });
 
 export const FormFieldPage: FC = () => {
@@ -45,6 +51,7 @@ export const FormFieldPage: FC = () => {
     email: false,
     password: false,
     passwordConfirm: false,
+    phoneNumber: false,
   });
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
   const {
@@ -58,9 +65,19 @@ export const FormFieldPage: FC = () => {
   const watchAllFields = watch();
 
   const onSubmit = (data: TSignupForm) => {
+    const phoneNumberNormalize = normalizePhoneNumber(data.phoneNumber);
     if (data.password === data.passwordConfirm) {
-      console.log("data: ", data);
       setIsPasswordMatch(true);
+      const options = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        password: data.password,
+        passwordConfirm: data.passwordConfirm,
+        phoneNumber: phoneNumberNormalize,
+      };
+      console.log("data: ", options);
+      // fetchUserSignup(data);
     } else {
       setIsPasswordMatch(false);
     };
@@ -111,6 +128,17 @@ export const FormFieldPage: FC = () => {
               register={register}
               error={errors.lastName && errors.lastName.message}
               isFocused={isFocused.lastName}
+              isRequired
+              onBlur={handleBlur}
+              onFocus={handleFocus}
+            />
+            <FormField
+              label="Phone"
+              name="phoneNumber"
+              type="tel"
+              register={register}
+              error={errors.phoneNumber && errors.phoneNumber.message}
+              isFocused={isFocused.phoneNumber}
               isRequired
               onBlur={handleBlur}
               onFocus={handleFocus}

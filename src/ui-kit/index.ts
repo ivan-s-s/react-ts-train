@@ -15,6 +15,7 @@ export * from "./Ripple";
 export * from "./Scrollbar";
 export * from "./Select";
 export * from "./Sidebar";
+export * from "./TextArea";
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 export type IconType = import("./Icon").IconType;

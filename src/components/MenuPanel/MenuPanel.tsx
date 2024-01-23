@@ -187,6 +187,17 @@ export const MenuPanel: FC = () => {
         >
           Sidebar
         </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "MenuPanel-ListItem MenuPanel-ListItem__active"
+              : "MenuPanel-ListItem"
+          }
+          to={ROUTES.TEXTAREA}
+        >
+          TextArea
+        </NavLink>
       </div>
     </nav>
   );

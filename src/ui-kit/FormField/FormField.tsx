@@ -1,8 +1,10 @@
 import clsx from "clsx";
 import { memo, useState } from "react";
+import { Icon, Input, TextArea } from "ui-kit";
 import type { FC, FocusEvent } from "react";
+import { InputPhone } from "ui-kit";
 import "./FormField.scss";
-import { Icon, Input } from "ui-kit";
+
 
 export type FormFieldType = "text" | "password" | "tel" | "textarea";
 
@@ -15,8 +17,16 @@ type TFromFieldProps = {
   type: FormFieldType;
   isFocused?: boolean;
   isRequired?: boolean;
-  onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
-  onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (
+    event:
+    | FocusEvent<HTMLInputElement>
+    | FocusEvent<HTMLTextAreaElement>
+  ) => void;
+  onFocus?: (
+    event:
+      | FocusEvent<HTMLInputElement>
+      | FocusEvent<HTMLTextAreaElement>
+  ) => void;
 };
 
 const FormFieldComponent: FC<TFromFieldProps> = ({
@@ -91,6 +101,38 @@ const FormFieldComponent: FC<TFromFieldProps> = ({
               <Icon type="VisibilityOff" />
             )}
           </div>
+          {error && <div className="FormField-ErrorMessage">{error}</div>}
+        </>
+      )}
+      {type === "tel" && (
+        <>
+          <InputPhone className={clsx({
+              Input__active: isFocused,
+              Input__error: error,
+            })}
+            name={name}
+            type={type}
+            {...register(name)}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            error={error}
+          />
+          {error && <div className="FormField-ErrorMessage">{error}</div>}
+        </>
+      )}
+      {type === "textarea" && (
+        <>
+          <TextArea className={clsx({
+              Input__active: isFocused,
+              Input__error: error,
+            })}
+            name={name}
+            type={type}
+            {...register(name)}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            error={error}
+          />
           {error && <div className="FormField-ErrorMessage">{error}</div>}
         </>
       )}

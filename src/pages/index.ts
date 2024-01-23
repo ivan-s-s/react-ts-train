@@ -18,3 +18,4 @@ export * from "./RipplePage";
 export * from "./ScrollbarPage";
 export * from "./SelectPage";
 export * from "./SidabarPage";
+export * from "./TextAreaPage";
